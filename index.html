@@ -3,558 +3,469 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>melkam lidet ፡ naima</title>
-<meta name="description" content="mostly plain cloth. the good part is at the edges.">
+<title>HAPPY BIRTHDAY NAIMA 🎉</title>
+<meta name="description" content="open it. it's your day.">
+<meta name="robots" content="noindex, nofollow, noimageindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300;1,9..144,400&family=Instrument+Sans:wght@400;500&family=DM+Mono:wght@400&family=Noto+Sans+Ethiopic:wght@300;400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Instrument+Sans:wght@400;500&family=Noto+Sans+Ethiopic:wght@400;700&display=swap" rel="stylesheet">
 <style>
-/* ————————————————————————————————————————————————
-   NEVER ADD: የኔ · ውዴ · ማሬ · ነፍሴ · እወድሻለሁ · አፈቅርሻለሁ
-   NEVER ADD: እህቴ, or any word naming the relationship.
-   NEVER ADD: any masculine -ህ ending. She is ሽ.
-   NEVER ADD: a line about how she looks.
-   ———————————————————————————————————————————————— */
+/* never: a line about how she looks · never: naming the relationship · never: masculine -ህ */
 :root{
-  --ground:#F7F2E8; --niche:#EDE3D2; --ink:#1A1512; --soft:#5E5348;
-  --kosso:#5C2A79; --tibeb:#9159B0; --gold:#C79A3C; --gold-lt:#F0D07A;
-  --teal:#1E6F6B; --madder:#A3271F;
-  --rule:rgba(92,42,121,.22); --faint:rgba(26,21,18,.08);
-  --serif:'Fraunces',Georgia,serif;
+  --bg:#1B0B2E; --bg2:#2B1150;
+  --purple:#A855F7; --purple-lt:#D8B4FE; --pink:#F472B6;
+  --gold:#FBBF24; --teal:#2DD4BF; --ink:#FDF6FF;
   --sans:'Instrument Sans',system-ui,sans-serif;
-  --mono:'DM Mono',ui-monospace,Menlo,monospace;
-  --fidel:'Noto Sans Ethiopic','Kefa','Nyala',serif;
-  --beat:.577s;
+  --disp:'Bricolage Grotesque',system-ui,sans-serif;
+  --fidel:'Noto Sans Ethiopic','Kefa','Nyala',sans-serif;
 }
-@media (prefers-color-scheme:dark){
-  :root{--ground:#171021;--niche:#211630;--ink:#EFE7D9;--soft:#A99BB5;
-    --kosso:#B98FD6;--tibeb:#C9A6E0;--rule:rgba(185,143,214,.3);--faint:rgba(239,231,217,.09);}
-}
-*{box-sizing:border-box}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
-  line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
-  background-image:repeating-linear-gradient(0deg,transparent 0 3px,rgba(120,95,140,.03) 3px 4px),
-    repeating-linear-gradient(90deg,transparent 0 3px,rgba(120,95,140,.03) 3px 4px);}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+  overflow-x:hidden;line-height:1.5;
+  background-image:radial-gradient(circle at 15% 10%,rgba(168,85,247,.35),transparent 45%),
+    radial-gradient(circle at 85% 25%,rgba(244,114,182,.22),transparent 45%),
+    radial-gradient(circle at 50% 95%,rgba(45,212,191,.16),transparent 50%);
+  background-attachment:fixed}
 
-.weraj{position:fixed;left:0;top:0;bottom:0;width:9px;z-index:9;pointer-events:none;
-  background:linear-gradient(var(--kosso),var(--kosso));background-size:100% var(--prog,0%);
-  background-repeat:no-repeat;border-right:1px solid var(--faint)}
+canvas#confetti{position:fixed;inset:0;pointer-events:none;z-index:60}
 
-.band{display:block;width:100%;height:16px}
-.wrap{max-width:620px;margin:0 auto;padding:0 22px}
-.hair{height:1px;background:var(--kosso);opacity:.45}
-.div{display:grid;gap:18px;margin:56px 0}
-.gap{height:20px}
+/* ── balloons ── */
+.balloons{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.balloon{position:absolute;bottom:-160px;width:44px;height:56px;border-radius:50% 50% 48% 48%;
+  opacity:.34;animation:rise linear infinite}
+.balloon::after{content:"";position:absolute;top:100%;left:50%;width:1px;height:46px;
+  background:rgba(253,246,255,.28)}
+@keyframes rise{to{transform:translateY(-118vh) rotate(var(--sp,10deg))}}
 
-.lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.15em;text-transform:uppercase;
-  color:var(--kosso);display:block;margin-bottom:14px}
-.gz{font-family:var(--fidel)}
-.lbl .gz{font-size:13px;letter-spacing:0}
-.tr{font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;color:var(--soft);margin:4px 0 0}
-.fid{font-family:var(--fidel);font-weight:300;color:var(--kosso);line-height:1.15}
+/* ── tilet band ── */
+.band{display:block;width:100%;height:14px}
+.dancing .band{animation:shim .38s ease-in-out infinite}
+.dancing .band:nth-of-type(even){animation-delay:.19s}
+@keyframes shim{0%,100%{transform:translateY(-3px)}50%{transform:translateY(3px)}}
 
-section{padding:8px 0}
-p{max-width:34ch;margin:0 0 1.1em}
-.big{font-family:var(--serif);font-weight:300;font-size:clamp(26px,7.6vw,40px);line-height:1.14;
-  margin:0 0 .5em;letter-spacing:-.01em}
-.say{font-family:var(--serif);font-weight:400;font-style:italic;font-size:17px;line-height:1.45}
+.wrap{position:relative;z-index:2;max-width:600px;margin:0 auto;padding:0 22px}
+.screen{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
+  padding:56px 0 calc(46px + env(safe-area-inset-bottom))}
 
-/* § 1 doorway */
-.door{min-height:100svh;display:flex;flex-direction:column;justify-content:center;
-  padding:40px 0 calc(30px + env(safe-area-inset-bottom))}
-.hello{font-size:clamp(40px,15vw,86px);margin:14px 0 0}
-.eighteen{display:inline-flex;align-items:baseline;gap:9px;margin:26px 0 0;padding:7px 16px;
-  border:1px solid var(--rule);border-radius:999px;font-family:var(--mono);font-size:12px;color:var(--soft)}
-.eighteen b{font-family:var(--serif);font-size:21px;font-weight:400;color:var(--kosso)}
-.promise{font-family:var(--mono);font-size:11.5px;color:var(--soft);margin-top:34px;line-height:1.7}
+/* ── gate ── */
+#gate{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:26px;padding:24px;text-align:center;
+  background:radial-gradient(circle at 50% 40%,#3B1566,#1B0B2E 70%);
+  transition:opacity .7s ease,visibility .7s ease}
+#gate.gone{opacity:0;visibility:hidden;pointer-events:none}
+.gate-k{font-family:var(--fidel);font-size:clamp(30px,10vw,52px);color:var(--purple-lt);
+  animation:float 3s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-11px)}}
+.gate-s{font-size:15px;color:#C9B6E4;max-width:24ch}
+.btn{border:none;cursor:pointer;font-family:var(--disp);font-weight:800;
+  background:linear-gradient(100deg,var(--purple),var(--pink) 60%,var(--gold));
+  background-size:220% 100%;color:#20073A;padding:19px 40px;border-radius:999px;
+  font-size:19px;box-shadow:0 14px 44px rgba(168,85,247,.5);animation:sheen 5s linear infinite;
+  min-height:56px}
+@keyframes sheen{to{background-position:220% 0}}
+.btn:active{transform:scale(.96)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 
-/* § 2 dictionary */
-.entry{padding-left:20px;text-indent:-20px}
-.hw{font-family:var(--serif);font-weight:400;font-size:31px;color:var(--kosso)}
-.pos{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--soft)}
-.gloss{margin:8px 0 0;min-height:3.2em}
-.cite{font-family:var(--mono);font-size:12px;color:var(--madder);margin-top:14px}
-.tap{font-family:var(--mono);font-size:10.5px;color:var(--soft);opacity:.75}
+/* ── hero ── */
+.hb{font-family:var(--disp);font-weight:800;line-height:.9;letter-spacing:-.035em;
+  font-size:clamp(58px,19vw,132px);margin:0;text-transform:uppercase}
+.hb span{display:block}
+.hb .l1{color:var(--purple-lt)}
+.hb .l2{color:var(--gold)}
+.hb .l3{background:linear-gradient(96deg,var(--pink),var(--purple-lt) 50%,var(--teal));
+  -webkit-background-clip:text;background-clip:text;color:transparent}
+.pop{opacity:0;transform:translateY(26px) scale(.92);animation:popin .62s cubic-bezier(.2,1.3,.35,1) forwards}
+@keyframes popin{to{opacity:1;transform:none}}
+.d1{animation-delay:.1s}.d2{animation-delay:.24s}.d3{animation-delay:.38s}
+.d4{animation-delay:.56s}.d5{animation-delay:.72s}
 
-/* § 3 dance */
-.shoulders{display:flex;gap:10px;justify-content:center;padding-bottom:10px;
-  border-bottom:1px solid var(--ink);margin:30px auto 26px;width:100%;max-width:300px}
-.pair{display:flex;gap:4px}
-.sh{width:15px;height:6px;border-radius:3px}
-.loz{display:block;margin:0 auto;padding:15px 30px;border:none;cursor:pointer;
-  background:linear-gradient(100deg,#8A5FA8,var(--tibeb) 45%,#6B3690);background-size:200% 100%;
-  color:#FFF;font-family:var(--fidel);font-size:20px;font-weight:400;
-  clip-path:polygon(16px 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,16px 100%,0 50%);
-  animation:drift 9s linear infinite;min-height:52px}
-@keyframes drift{to{background-position:200% 0}}
-.loz:focus-visible{outline:2px solid var(--gold);outline-offset:4px}
-.cnt{font-family:var(--mono);font-size:11.5px;color:var(--soft);text-align:center;margin-top:14px}
-.notes{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:16px}
-.note{background:var(--ground);border:1px solid var(--rule);padding:5px 11px;font-size:12.5px;
-  font-family:var(--serif);font-style:italic;animation:pop .34s cubic-bezier(.15,.9,.25,1)}
-@keyframes pop{from{opacity:0;transform:translateY(11px) rotate(0)}to{opacity:1;transform:translateY(0) rotate(var(--r,0deg))}}
+.amh{font-family:var(--fidel);font-weight:700;font-size:clamp(26px,8vw,46px);
+  color:var(--teal);margin:20px 0 4px}
+.tr{font-family:var(--sans);font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#B49AD4}
 
-body.dance .band{animation:shim var(--beat) ease-in-out infinite}
-body.dance .band:nth-of-type(even){animation-delay:calc(var(--beat)/2)}
-@keyframes shim{0%,100%{transform:translateY(-2px)}50%{transform:translateY(2px)}}
-body.dance .sh{animation:sk var(--beat) cubic-bezier(.15,.9,.25,1) infinite alternate}
-@keyframes sk{from{transform:translateY(-3px) skewX(-.6deg)}to{transform:translateY(3px) skewX(.6deg)}}
-body.dance.t2{--beat:.385s} body.dance.t3{--beat:.288s}
+.eighteen{display:inline-flex;align-items:center;gap:11px;margin-top:26px;padding:11px 22px;
+  border-radius:999px;background:rgba(168,85,247,.18);border:1.5px solid var(--purple);
+  font-size:14px;color:#E6D4FF}
+.eighteen b{font-family:var(--disp);font-weight:800;font-size:30px;color:var(--gold);line-height:1}
 
-/* § 4 loom */
-.loom{background:var(--niche);border:1px solid var(--rule);padding:20px 16px;margin:26px 0}
-.bed{display:flex;align-items:center;gap:6px;justify-content:center}
-.post{width:4px;height:52px;background:var(--ink);flex:none}
-.slots{display:grid;grid-template-columns:repeat(12,1fr);gap:2px;flex:1;height:52px;align-items:center}
-.slot{aspect-ratio:1;border:none;background:none;padding:0;cursor:pointer;position:relative}
-.slot::after{content:"";position:absolute;inset:38%;border-radius:50%;background:var(--soft);opacity:.22}
-.slot.on::after{display:none}
-.slot svg{width:100%;height:100%;display:block}
-.spools{display:flex;gap:12px;justify-content:center;margin-top:18px}
-.spool{width:26px;height:26px;border-radius:50%;border:1px solid var(--faint);cursor:pointer;padding:0}
-.spool[aria-pressed="true"]{transform:translateY(-3px);box-shadow:0 0 0 1.5px var(--gold)}
-.loomfoot{display:flex;justify-content:space-between;align-items:center;margin-top:16px;
-  font-family:var(--mono);font-size:11px;color:var(--soft);gap:12px;flex-wrap:wrap}
-.lnk{background:none;border:none;padding:0;font-family:var(--mono);font-size:11px;
-  color:var(--kosso);cursor:pointer;text-decoration:underline;text-underline-offset:3px}
-.cap{font-family:var(--serif);font-style:italic;font-size:14px;color:var(--soft);
-  margin-top:14px;min-height:2.6em;text-align:center}
+.line{font-size:clamp(17px,4.6vw,21px);margin:0 0 16px;max-width:24ch}
+.line b{font-weight:500;color:var(--gold)}
+.big2{font-family:var(--disp);font-weight:800;font-size:clamp(28px,8.5vw,48px);
+  line-height:1.02;letter-spacing:-.025em;margin:0 0 20px}
+.kick{font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--pink);margin-bottom:14px;display:block}
 
-/* § 5 niche */
-.niche{background:var(--niche);border:1px solid var(--rule);padding:22px 16px;margin:26px 0}
-.pairs{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.ph{position:relative;aspect-ratio:1;border-radius:50%;overflow:hidden;background:var(--ground);
-  border:2px solid var(--kosso);display:grid;place-items:center;cursor:default}
-.fig{margin:0}
-.fig:nth-child(odd) .ph{transform:rotate(-1.4deg)}
-.fig:nth-child(even) .ph{transform:rotate(1.1deg)}
-.fig:nth-child(even){margin-top:16px}
-.phcap{font-family:var(--serif);font-style:italic;font-size:12.5px;color:var(--soft);
-  text-align:center;margin-top:10px;line-height:1.4}
-.ph img,.ph video{width:100%;height:100%;object-fit:cover}
-.ph .mk{font-family:var(--fidel);font-size:20px;color:var(--gold);opacity:.6}
+/* ── dance floor ── */
+.floor{display:grid;grid-template-columns:repeat(6,1fr);gap:5px;margin:26px 0 22px}
+.tile{aspect-ratio:1;border-radius:5px;background:rgba(168,85,247,.28);
+  box-shadow:inset 0 0 0 1px rgba(216,180,254,.14)}
+.dancing .tile{animation:lite .77s steps(1,end) infinite}
+@keyframes lite{0%{background:var(--purple)}25%{background:var(--pink)}
+  50%{background:var(--gold)}75%{background:var(--teal)}100%{background:var(--purple)}}
+.crew{display:flex;gap:12px;justify-content:center;align-items:flex-end;height:72px;margin:8px 0 20px}
+.guy{width:22px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.head{width:15px;height:15px;border-radius:50%}
+.body{width:22px;height:9px;border-radius:5px}
+.dancing .guy{animation:bop .38s cubic-bezier(.15,.9,.25,1) infinite alternate}
+@keyframes bop{from{transform:translateY(-7px) rotate(-5deg)}to{transform:translateY(4px) rotate(5deg)}}
 
-/* § 6 millennium */
-.months{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;margin:22px 0 8px}
-.mo{background:var(--niche);border:1px solid var(--faint);padding:9px 4px;text-align:center;
-  font-family:var(--mono);font-size:9.5px;color:var(--soft)}
-.mo.hers{background:var(--kosso);color:#fff;border-color:var(--kosso)}
-.pag{background:linear-gradient(100deg,#9A6F22,var(--gold-lt) 45%,#B98A2E);background-size:200% 100%;
-  height:26px;display:grid;place-items:center;font-family:var(--fidel);font-size:13px;color:#241A05;
-  animation:breathe 4s ease-in-out infinite,drift 9s linear infinite}
-@keyframes breathe{0%,100%{transform:scaleY(1)}50%{transform:scaleY(1.04)}}
-.mill{border-left:3px solid var(--kosso);padding:2px 0 2px 16px;margin:26px 0}
-.mill .yr{font-family:var(--serif);font-size:46px;font-weight:300;color:var(--kosso);line-height:1}
-.wish{width:100%;background:none;border:none;border-bottom:1px solid var(--rule);
-  font-family:var(--serif);font-style:italic;font-size:16px;color:var(--ink);padding:9px 2px;margin-top:8px}
-.wish:focus{outline:none;border-bottom-color:var(--gold)}
-.echo{font-family:var(--serif);font-style:italic;font-size:16px;color:var(--kosso);
-  min-height:1.5em;margin-top:12px;border-bottom:1px solid transparent}
+.controls{display:flex;flex-direction:column;gap:12px;align-items:center}
+.cnt{font-size:13px;color:#BFA8DF;min-height:1.4em;text-align:center;max-width:28ch}
+.notes{display:flex;flex-wrap:wrap;gap:7px;justify-content:center;margin-top:6px}
+.note{background:rgba(253,246,255,.1);border:1px solid rgba(216,180,254,.35);
+  padding:6px 12px;border-radius:999px;font-size:12.5px;color:#EBDCFF;
+  animation:popin .35s cubic-bezier(.2,1.3,.35,1)}
 
-/* § 7 fringe */
-.clock{display:flex;gap:14px;font-family:var(--mono);font-size:12.5px;color:var(--soft);
-  margin:22px 0;flex-wrap:wrap}
-.clock b{color:var(--ink);font-weight:400}
-.fine{font-size:11.5px;color:var(--soft);opacity:.75;line-height:1.65;max-width:36ch}
-.fringe{display:flex;gap:5px;justify-content:center;margin-top:8px;
-  padding-bottom:calc(14px + env(safe-area-inset-bottom))}
-.fringe i{display:block;width:2px;background:var(--kosso);opacity:.5}
-.mark{font-family:var(--fidel);font-size:20px;color:var(--gold);text-align:center;margin:26px 0 6px}
+/* ── music ── */
+.music{background:rgba(43,17,80,.72);border:1.5px solid rgba(168,85,247,.5);
+  border-radius:18px;padding:16px;margin:8px 0 0}
+.music h3{font-family:var(--disp);font-weight:600;font-size:15px;margin:0 0 4px}
+.music p{font-size:12.5px;color:#B49AD4;margin:0 0 12px}
+#player{width:100%;aspect-ratio:16/9;border:none;border-radius:12px;display:block}
+.mstub{width:100%;aspect-ratio:16/9;border-radius:12px;border:none;cursor:pointer;
+  background:linear-gradient(120deg,#3B1566,#5B1F8C);color:var(--ink);
+  font-family:var(--disp);font-weight:600;font-size:15px;display:flex;align-items:center;
+  justify-content:center;gap:9px}
+.mstub:active{transform:scale(.99)}
 
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+.mpill{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:70;
+  background:rgba(43,17,80,.9);border:1.5px solid var(--purple);color:var(--ink);cursor:pointer;
+  font-family:var(--sans);font-size:12px;padding:10px 15px;border-radius:999px;
+  display:none;align-items:center;gap:7px;min-height:40px;backdrop-filter:blur(6px)}
+.mpill.show{display:flex}
+.mpill.on{background:var(--purple);color:#20073A;font-weight:500}
+.mhint{font-size:12.5px;color:var(--gold);margin:10px 0 0;text-align:center;display:none}
+.mhint.show{display:block}
+#player{width:100%;aspect-ratio:16/9;border:none;border-radius:12px;display:block}
+
+.shots{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch}
+.shot{flex:0 0 auto;width:150px;scroll-snap-align:center}
+.shot .fr{width:150px;height:150px;border-radius:16px;overflow:hidden;background:rgba(168,85,247,.2);
+  border:2px solid var(--purple);display:grid;place-items:center}
+.shot:nth-child(odd) .fr{transform:rotate(-2deg)}
+.shot:nth-child(even) .fr{transform:rotate(2deg)}
+.shot img,.shot video{width:100%;height:100%;object-fit:cover;display:block}
+.shot p{font-size:12.5px;color:#C6B0E6;margin:12px 0 0;text-align:center;line-height:1.35}
+.dancing .shot .fr{animation:bop .38s cubic-bezier(.15,.9,.25,1) infinite alternate}
+.dua{background:linear-gradient(165deg,rgba(43,17,80,.9),rgba(27,11,46,.85));
+  border:1.5px solid rgba(251,191,36,.42);border-radius:20px;padding:26px 22px;margin:30px 0 26px;
+  text-align:left;position:relative;overflow:hidden}
+.dua::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(circle at 50% -20%,rgba(251,191,36,.16),transparent 62%)}
+.dua-h{font-family:var(--sans);font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);margin:0 0 16px;position:relative}
+.dua p{font-size:clamp(16px,4.3vw,19px);line-height:1.62;margin:0 0 13px;max-width:none;
+  color:#F2E9FB;position:relative}
+.dua p:last-child{margin-bottom:0}
+.dua .ameen{font-family:var(--disp);font-weight:600;font-size:21px;color:var(--gold);
+  margin-top:20px;letter-spacing:.02em}
+.adult{display:inline-flex;align-items:center;gap:9px;margin:0 auto 20px;padding:9px 18px;
+  border-radius:999px;background:rgba(251,191,36,.14);border:1.5px solid rgba(251,191,36,.5);
+  font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold)}
+.fin{text-align:center}
+.mark{font-family:var(--fidel);font-size:26px;color:var(--gold);margin:26px 0 8px}
+.sig{font-size:13px;color:#A38FC4}
+.gzs{font-family:var(--fidel);color:var(--gold)}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.01ms!important;animation-iteration-count:1!important}
+  .pop{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 
-<div class="weraj" id="weraj"></div>
+<canvas id="confetti"></canvas>
+<div class="balloons" id="balloons" aria-hidden="true"></div>
+<button class="mpill" id="mpill" type="button">♪ <span>music</span></button>
+
+<div id="gate">
+  <div class="gate-k">መልካም ልደት</div>
+  <p class="gate-s">melkam lidet, naima. it's today, it's yours, and a text was never going to cover it.<br><br>so i made you something loud. volume up first — you're going to press this before you finish reading anyway. i know how you are.</p>
+  <button class="btn" id="openBtn" type="button">turn it on 🎉</button>
+</div>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
-<pattern id="tilet" width="88" height="16" patternUnits="userSpaceOnUse">
-  <rect x="0" y="0" width="88" height="2" fill="#5C2A79"/>
-  <rect x="0" y="14" width="88" height="2" fill="#5C2A79"/>
-  <g fill="#9159B0">
-    <rect x="0" y="2" width="2" height="2"/><rect x="8" y="2" width="2" height="2"/>
-    <rect x="16" y="2" width="2" height="2"/><rect x="24" y="2" width="2" height="2"/>
-    <rect x="32" y="2" width="2" height="2"/><rect x="40" y="2" width="2" height="2"/>
-    <rect x="48" y="2" width="2" height="2"/><rect x="56" y="2" width="2" height="2"/>
-    <rect x="64" y="2" width="2" height="2"/><rect x="72" y="2" width="2" height="2"/>
-    <rect x="80" y="2" width="2" height="2"/>
-    <rect x="0" y="12" width="2" height="2"/><rect x="8" y="12" width="2" height="2"/>
-    <rect x="16" y="12" width="2" height="2"/><rect x="24" y="12" width="2" height="2"/>
-    <rect x="32" y="12" width="2" height="2"/><rect x="40" y="12" width="2" height="2"/>
-    <rect x="48" y="12" width="2" height="2"/><rect x="56" y="12" width="2" height="2"/>
-    <rect x="64" y="12" width="2" height="2"/><rect x="72" y="12" width="2" height="2"/>
-    <rect x="80" y="12" width="2" height="2"/>
-  </g>
-  <g fill="#5C2A79"><rect x="10" y="4" width="2" height="2"/><rect x="8" y="6" width="6" height="2"/>
-    <rect x="6" y="8" width="10" height="2"/><rect x="8" y="10" width="6" height="2"/></g>
-  <g fill="#C79A3C"><rect x="32" y="4" width="2" height="2"/><rect x="30" y="6" width="6" height="2"/>
-    <rect x="28" y="8" width="10" height="2"/><rect x="30" y="10" width="6" height="2"/></g>
-  <g fill="#9159B0"><rect x="54" y="4" width="2" height="2"/><rect x="52" y="6" width="6" height="2"/>
-    <rect x="50" y="8" width="10" height="2"/><rect x="52" y="10" width="6" height="2"/></g>
-  <g fill="#1E6F6B"><rect x="76" y="4" width="2" height="2"/><rect x="74" y="6" width="6" height="2"/>
-    <rect x="72" y="8" width="10" height="2"/><rect x="74" y="10" width="6" height="2"/></g>
+<pattern id="tilet" width="72" height="14" patternUnits="userSpaceOnUse">
+  <rect width="72" height="2" y="0" fill="#A855F7"/><rect width="72" height="2" y="12" fill="#A855F7"/>
+  <g fill="#FBBF24"><rect x="8" y="4" width="2" height="2"/><rect x="6" y="6" width="6" height="2"/><rect x="4" y="8" width="10" height="2"/></g>
+  <g fill="#F472B6"><rect x="26" y="4" width="2" height="2"/><rect x="24" y="6" width="6" height="2"/><rect x="22" y="8" width="10" height="2"/></g>
+  <g fill="#2DD4BF"><rect x="44" y="4" width="2" height="2"/><rect x="42" y="6" width="6" height="2"/><rect x="40" y="8" width="10" height="2"/></g>
+  <g fill="#D8B4FE"><rect x="62" y="4" width="2" height="2"/><rect x="60" y="6" width="6" height="2"/><rect x="58" y="8" width="10" height="2"/></g>
 </pattern></defs></svg>
 
-<svg class="band" role="img" aria-label="woven border"><rect width="100%" height="16" fill="url(#tilet)"/></svg>
-<div class="gap"></div><div class="wrap"><div class="hair"></div></div>
+<svg class="band" role="img" aria-label="woven border"><rect width="100%" height="14" fill="url(#tilet)"/></svg>
 
 <main class="wrap">
 
-<!-- ————— § 1 ————— -->
-<section class="door">
-  <p class="fid" style="font-size:19px;margin:0">እንኳን ደህና መጣሽ</p>
-  <p class="tr" style="margin:2px 0 0">enkuan dehna metash</p>
-  <h1 class="fid hello">መልካም ልደት</h1>
-  <p class="tr" style="font-size:14px">melkam lidet, naima ።</p>
-  <div class="eighteen"><b id="ageNum">18</b> <span id="ageLine">today · ሐምሌ ፲፭ ፳፻፲፰</span></div>
-  <p class="promise">
-    everything on this page already works.<br>
-    nothing is locked. nothing is earned.<br>
-    scroll.
-  </p>
-</section>
-
-<div class="div"><svg class="band" role="img" aria-label="woven border"><rect width="100%" height="16" fill="url(#tilet)"/></svg><div class="hair"></div></div>
-
-<!-- ————— § 2 ————— -->
-<section>
-  <span class="lbl"><span class="gz">፩</span> · the zigzag — the long way round</span>
-  <div class="entry">
-    <span class="hw">naima</span> <span class="pos">n.</span>
-    <p class="gloss" id="gloss">from the Arabic. tranquil. serene. at ease.</p>
-  </div>
-  <p class="cite">[ citation needed ]</p>
-  <p class="say">whoever filed that had clearly never watched you hear the first four seconds of a song you like.</p>
-  <p class="tap">(tap the word, it gets worse)</p>
-</section>
-
-<div class="div"><svg class="band" role="img" aria-label="woven border"><rect width="100%" height="16" fill="url(#tilet)"/></svg><div class="hair"></div></div>
-
-<!-- ————— § 3 ————— -->
-<section>
-  <span class="lbl"><span class="gz">፪</span> · the bands do the shoulders</span>
-  <h2 class="fid" style="font-size:clamp(38px,12vw,64px);margin:0">ጭፈራ</h2>
-  <p class="tr">chifera</p>
-  <p class="say" style="margin-top:18px">there is no naima party without dance. i didn't write that rule. i am simply legally required to comply with it.</p>
-  <div class="shoulders" id="shoulders" aria-hidden="true"></div>
-  <button class="loz" id="danceBtn" type="button">እስክስታ</button>
-  <p class="tr" style="text-align:center;margin-top:9px">eskista · tap it. or hold it.</p>
-  <p class="cnt" id="cnt">presses: 0</p>
-  <div class="notes" id="notes"></div>
-  <p style="margin-top:22px;font-size:14px;color:var(--soft)">shoulders only. i checked.</p>
-</section>
-
-<div class="div"><svg class="band" role="img" aria-label="woven border"><rect width="100%" height="16" fill="url(#tilet)"/></svg><div class="hair"></div></div>
-
-<!-- ————— § 4 ————— -->
-<section>
-  <span class="lbl"><span class="gz">፫</span> · the diamond — people, holding on</span>
-  <p>the field stays plain. that's not my call, that's the rule — all the pattern goes to the edge or it isn't <span class="gz" style="color:var(--kosso)">ጥለት</span>, it's a tablecloth.</p>
-  <p class="say">so: the edges are yours.</p>
-  <div class="loom">
-    <div class="bed"><div class="post"></div><div class="slots" id="slots"></div><div class="post"></div></div>
-    <div class="spools" id="spools"></div>
-    <div class="loomfoot">
-      <span id="loomCount">4 / 12</span>
-      <button class="lnk" id="autoWeave" type="button">weave the rest for me →</button>
+  <!-- ═══ 1. THE SHOUT ═══ -->
+  <section class="screen">
+    <h1 class="hb">
+      <span class="l1 pop d1">happy</span>
+      <span class="l2 pop d2">birthday</span>
+      <span class="l3 pop d3">naima</span>
+    </h1>
+    <div class="pop d4">
+      <div class="amh">መልካም ልደት</div>
+      <div class="tr">melkam lidet</div>
     </div>
-    <p class="cap" id="loomCap">pick a colour. put it anywhere. you cannot make this ugly — the loom has rules, same as a real one.</p>
-  </div>
-</section>
+    <div class="pop d5">
+      <div class="eighteen"><b id="ageNum">18</b> <span>eighteen today. i've been waiting all week to say it properly.</span></div>
+    </div>
+  </section>
 
-<div class="div"><svg class="band" role="img" aria-label="woven border"><rect width="100%" height="16" fill="url(#tilet)"/></svg><div class="hair"></div></div>
+  <svg class="band" role="img" aria-label="woven border"><rect width="100%" height="14" fill="url(#tilet)"/></svg>
 
-<!-- ————— § 5 ————— -->
-<section>
-  <span class="lbl"><span class="gz">፬</span> · the niche</span>
-  <p>hung in pairs. that's also a rule. i follow rules very selectively but i liked this one.</p>
-  <div class="niche">
-    <div class="pairs" id="pairs"></div>
-  </div>
-  <p style="font-size:14px;color:var(--soft)">photos pending. you know which ones. you have veto power and we both know you're going to use it.</p>
-</section>
+  <!-- ═══ 2. THE RULE ═══ -->
+  <section class="screen">
+    <span class="kick">the rule</span>
+    <h2 class="big2">there is no naima party without dance.</h2>
+    <p class="line">everybody knows it. nobody argues. the song lands and you're already up.</p>
+    <p class="line">and you always start in the shoulders. <b>i can call it before the first chorus.</b></p>
+    <p class="line">so press the button. the whole page is coming with you.</p>
 
-<div class="div"><svg class="band" role="img" aria-label="woven border"><rect width="100%" height="16" fill="url(#tilet)"/></svg><div class="hair"></div></div>
+    <div class="crew" id="crew" aria-hidden="true"></div>
+    <div class="floor" id="floor" aria-hidden="true"></div>
 
-<!-- ————— § 6 ————— -->
-<section>
-  <span class="lbl"><span class="gz">፭</span> · the year you were born</span>
-  <div class="mill">
-    <div class="yr" id="ecBirth">2000</div>
-    <p style="margin:6px 0 0;font-size:15px">that's your birth year on the other calendar. not a typo.</p>
-  </div>
-  <p>over there they were counting down to a new millennium the year you showed up. actual fireworks. a stage in the middle of addis. they flew a band in for it.</p>
-  <p class="say">so the country threw the biggest party in its modern history to open the year you were born in, and then you spent the next eighteen years behaving exactly like someone who knows that.</p>
+    <div class="controls">
+      <button class="btn" id="danceBtn" type="button">እስክስታ — make the whole page dance</button>
+      <div class="cnt" id="cnt">press it. then press it again, obviously.</div>
+      <div class="notes" id="notes"></div>
+    </div>
 
-  <p style="margin-top:32px">also, while we're in this calendar: it runs twelve months of exactly thirty days. and then five days left over that don't belong to any of them.</p>
-  <div class="months" id="months"></div>
-  <div class="pag"><span>ጳጉሜ · pagumē · 5 days</span></div>
-  <p style="margin-top:16px">that's the whole grid. twelve the same size, and then that. nobody expects anything from those five. nobody's counting them.</p>
-  <p class="say">i keep thinking about how you'd spend five days nobody's counting. i think you'd have extremely strong opinions and i think at least two of them would involve a speaker.</p>
-  <label for="wish" class="tr" style="display:block;margin-top:22px">what would you do with them?</label>
-  <input class="wish" id="wish" type="text" autocomplete="off" placeholder="five days, no obligations…">
-  <p class="echo" id="echo"></p>
-  <p class="tr" style="margin-top:10px">this doesn't go anywhere. no server, no form, not to me. genuinely just yours.</p>
-</section>
+    <div class="music">
+      <h3>🎧 the actual music</h3>
+      <p>rophnan · teddy afro · aster aweke — non-stop. turn it up.</p>
+      <div id="player"></div>
+      <p class="mhint" id="mhint">your phone blocked the autoplay. hit ▶ up there.</p>
+    </div>
+  </section>
 
-<div class="div"><svg class="band" role="img" aria-label="woven border"><rect width="100%" height="16" fill="url(#tilet)"/></svg><div class="hair"></div></div>
+  <section class="screen" id="shotsSec" style="display:none">
+    <span class="kick">the evidence</span>
+    <h2 class="big2" id="shotsTitle">exhibit a through whatever.</h2>
+    <p class="line" style="margin:0 0 6px">receipts. swipe.</p>
+    <div class="shots" id="shots"></div>
+  </section>
 
-<!-- ————— § 7 ————— -->
-<section>
-  <h2 class="fid" style="font-size:clamp(34px,10vw,56px);margin:0">ጎበዝ።</h2>
-  <p class="tr">gobez</p>
-  <p style="margin-top:22px">the most famous woman ever found in ethiopia is called <span class="gz" style="color:var(--kosso)">ድንቅነሽ</span> — dinkinesh.</p>
-  <p class="say">it means <em>you are marvellous.</em></p>
-  <p>that's not me editorialising. that is just her name. i looked it up. then i looked it up again.</p>
-  <div class="clock">
-    <span id="cityClock">TORONTO —</span><span>፡</span><span id="addisClock">ADDIS —</span>
-  </div>
-  <p class="fine">
-    over there the day starts at dawn, so the clock restarts at sunrise. two clocks, one of you. figure it out.
-  </p>
-  <p class="fine" style="margin-top:14px">
-    same length years, both calendars — so you are exactly as old as you are. i checked twice. i wanted the other answer.
-    what is true: over there the paperwork says you were born in a different year entirely. millennium baby, technically.
-  </p>
-  <div class="mark">፨</div>
-  <p class="say" style="text-align:center;font-size:15px;color:var(--soft)">
-    made almost entirely of plain cloth.<br>the good part is at the edges.
-  </p>
-</section>
+  <svg class="band" role="img" aria-label="woven border"><rect width="100%" height="14" fill="url(#tilet)"/></svg>
+
+  <!-- ═══ 3. THE FLEX ═══ -->
+  <section class="screen">
+    <span class="kick">one fact, then i'll stop</span>
+    <h2 class="big2">you were born in the year <span style="color:var(--gold)">2000</span>.</h2>
+    <p class="line">on the ethiopian calendar. i didn't drop a digit.</p>
+    <p class="line">that year opened with the <b>millennium</b> — fireworks over addis, a huge stage in the middle of the city, a whole band flown in for it.</p>
+    <p class="line">so the country was already dancing when you got here, and you've been keeping it going ever since.</p>
+    <p class="line" style="color:#C6B0E6">i looked all of that up the day you told me your birthday. no particular reason.</p>
+  </section>
+
+  <svg class="band" role="img" aria-label="woven border"><rect width="100%" height="14" fill="url(#tilet)"/></svg>
+
+  <!-- ═══ 4. THE HANDOVER ═══ -->
+  <section class="screen fin">
+    <div class="adult">welcome to the adult table</div>
+    <h2 class="big2">eighteen. the handover.</h2>
+
+    <p class="line" style="margin:0 auto 16px">melkam lidet, naima. eighteen today.<br><b>not a number. a door.</b></p>
+    <p class="line" style="margin:0 auto 16px">and you walked through it this morning without even slowing down.</p>
+    <p class="line" style="margin:0 auto 16px">the world quietly handed the keys over. no ceremony, no test, no instructions. just: here. they're yours now.</p>
+    <p class="line" style="margin:0 auto 26px">born the year ethiopia opened a whole new millennium. of course you were.</p>
+
+    <p class="line" style="margin:0 auto 16px">which is funny, because nobody trained you for this. they just went: <b>she's eighteen, she'll figure it out, in sha Allah.</b></p>
+    <p class="line" style="margin:0 auto 16px">you can sign a lease now. a phone plan with your actual name on it. terrifying.</p>
+    <p class="line" style="margin:0 auto 16px">you can be somebody's emergency contact. legally. that would hold up.</p>
+    <p class="line" style="margin:0 auto 8px">eighteen years of supervision, and the handover ceremony was a cake.</p>
+
+    <div class="dua">
+      <p class="dua-h">okay. one serious minute, then i'll stop.</p>
+      <p>may Allah make university easy for you.</p>
+      <p>the first week especially. the loud one where nobody knows anybody yet. may He make it soft.</p>
+      <p>may you find your people fast. the ones who save you a seat and actually text back.</p>
+      <p>may focus show up on the nights it's hard to start, and may the things you study end up loving you back.</p>
+      <p>may every door you knock on open, and the ones that don't, may they be doors you never wanted.</p>
+      <p>whatever you're building, even the parts you haven't said out loud — may Allah put barakah in it, bigger than you planned it.</p>
+      <p>health, protection, ease after every hard thing, quickly, not eventually. in st. john's and everywhere this takes you next.</p>
+      <p>may your parents get to watch every single thing they prayed for you actually happen.</p>
+      <p>may joy find you on ordinary tuesdays, not just on days like this one.</p>
+      <p class="ameen">ameen.</p>
+    </div>
+
+    <p class="line" style="margin:0 auto 16px">right. that's the sincere part over, don't make it weird.</p>
+    <p class="line" style="margin:0 auto 16px">you have adult responsibilities now, and the first one is the rule: <b>there is no naima party without dance.</b></p>
+    <p class="line" style="margin:0 auto 22px">so go. the floor is yours, and legally nobody can tell you to sit down.</p>
+
+    <button class="btn" id="moreBtn" type="button">more confetti 🎊</button>
+    <div class="mark">፨</div>
+    <p class="line" style="margin:0 auto 6px"><span class="gzs">ጎበዝ</span>, naima. eighteen whole years, well done.</p>
+    <p class="sig">— abdulmujeeb</p>
+  </section>
 
 </main>
 
-<div class="gap"></div>
-<div class="wrap"><div class="hair"></div></div><div class="gap"></div>
-<svg class="band" role="img" aria-label="woven border"><rect width="100%" height="16" fill="url(#tilet)"/></svg>
-<div class="fringe" id="fringe" aria-hidden="true"></div>
+<svg class="band" role="img" aria-label="woven border"><rect width="100%" height="14" fill="url(#tilet)"/></svg>
+<div style="height:34px"></div>
 
 <script>
-/* ——— the only things you edit ——— */
-var BIRTH = {y:2008, m:7, d:22};   // her birth date (gregorian)
-var CITY  = 'TORONTO';             // <-- CONFIRM THIS
-var TZ    = 'America/Toronto';
-/* ——————————————————————————————— */
+var VIDEO_ID = 'WtD6uwxOSCQ';   /* swap for any youtube id you prefer */
 
-var $=function(s){return document.querySelector(s)};
-var ETH_EPOCH=1724221;
-function g2jdn(y,m,d){var a=Math.floor((14-m)/12),y2=y+4800-a,m2=m+12*a-3;
-  return d+Math.floor((153*m2+2)/5)+365*y2+Math.floor(y2/4)-Math.floor(y2/100)+Math.floor(y2/400)-32045;}
-function jdn2eth(j){var r=j-ETH_EPOCH,n=Math.floor(r/1461),rem=r%1461,
-  year=4*n+Math.floor(rem/365),doy=rem%365;
-  if(rem===1460){year=4*n+3;doy=365;}
-  year+=1;return{y:year,m:Math.floor(doy/30)+1,d:doy%30+1};}
-var GEEZ={1:'፩',2:'፪',3:'፫',4:'፬',5:'፭',6:'፮',7:'፯',8:'፰',9:'፱',10:'፲',20:'፳',30:'፴',40:'፵',50:'፶',60:'፷',70:'፸',80:'፹',90:'፺'};
-function geez(n){if(n<=0)return'';var o='';
-  if(n>=100){var h=Math.floor(n/100);o+=(h>1?geez(h):'')+'፻';n=n%100;}
-  if(n>=10){o+=GEEZ[Math.floor(n/10)*10];n=n%10;}
-  if(n>0)o+=GEEZ[n];return o;}
-var EM=['','መስከረም','ጥቅምት','ኅዳር','ታኅሣሥ','ጥር','የካቲት','መጋቢት','ሚያዝያ','ግንቦት','ሰኔ','ሐምሌ','ነሐሴ','ጳጉሜ'];
-var EMT=['','meskerem','tikimt','hidar','tahsas','tir','yekatit','megabit','miyazia','ginbot','sene','hamle','nehase','pagume'];
+/* ── confetti ── */
+var cv=document.getElementById('confetti'),cx=cv.getContext('2d'),bits=[],raf=null;
+var COL=['#A855F7','#F472B6','#FBBF24','#2DD4BF','#D8B4FE','#FDF6FF'];
+function size(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devicePixelRatio;
+  cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);}
+size();addEventListener('resize',size);
+function burst(n){
+  for(var i=0;i<n;i++)bits.push({x:Math.random()*innerWidth,y:-20-Math.random()*200,
+    w:5+Math.random()*7,h:8+Math.random()*9,c:COL[(Math.random()*COL.length)|0],
+    vx:(Math.random()-.5)*2.4,vy:2+Math.random()*3.4,r:Math.random()*6.28,vr:(Math.random()-.5)*.24});
+  if(!raf)loop();
+}
+function loop(){
+  cx.clearRect(0,0,innerWidth,innerHeight);
+  for(var i=bits.length-1;i>=0;i--){var b=bits[i];
+    b.x+=b.vx;b.y+=b.vy;b.vy+=.03;b.r+=b.vr;
+    cx.save();cx.translate(b.x,b.y);cx.rotate(b.r);cx.fillStyle=b.c;
+    cx.fillRect(-b.w/2,-b.h/2,b.w,b.h);cx.restore();
+    if(b.y>innerHeight+40)bits.splice(i,1);}
+  raf=bits.length?requestAnimationFrame(loop):null;
+  if(!raf)cx.clearRect(0,0,innerWidth,innerHeight);
+}
 
-/* ages + dates */
-(function(){
-  var now=new Date();
-  var yr=now.getFullYear();
-  var thisYearBday=new Date(yr,BIRTH.m-1,BIRTH.d);
-  if(now>thisYearBday&&!(now.getMonth()+1===BIRTH.m&&now.getDate()===BIRTH.d))
-    {if(now.getMonth()+1>BIRTH.m||(now.getMonth()+1===BIRTH.m&&now.getDate()>BIRTH.d))yr=yr+1;}
-  var turning=yr-BIRTH.y;
-  var isToday=(now.getMonth()+1===BIRTH.m&&now.getDate()===BIRTH.d);
-  var tomorrow=new Date(now.getFullYear(),now.getMonth(),now.getDate()+1);
-  var isEve=(tomorrow.getMonth()+1===BIRTH.m&&tomorrow.getDate()===BIRTH.d);
-  var eBday=jdn2eth(g2jdn(yr,BIRTH.m,BIRTH.d));
-  var eB=jdn2eth(g2jdn(BIRTH.y,BIRTH.m,BIRTH.d));
-  $('#ageNum').textContent=turning;
-  $('#ageLine').textContent=(isToday?'today':isEve?'at midnight':'')+
-    ' · '+EM[eBday.m]+' '+geez(eBday.d)+' '+geez(eBday.y);
-  $('#ecBirth').textContent=eB.y;
-  var mo=$('#months');
-  for(var i=1;i<=12;i++){var d=document.createElement('div');
-    d.className='mo'+(i===eB.m?' hers':'');d.textContent=EMT[i];mo.appendChild(d);}
+/* ── balloons ── */
+(function(){var w=document.getElementById('balloons');
+  for(var i=0;i<11;i++){var b=document.createElement('div');b.className='balloon';
+    b.style.left=(4+i*9)+'%';b.style.background=COL[i%COL.length];
+    b.style.animationDuration=(11+Math.random()*9)+'s';
+    b.style.animationDelay=(-Math.random()*16)+'s';
+    b.style.setProperty('--sp',((Math.random()-.5)*40)+'deg');
+    w.appendChild(b);}
 })();
 
-/* § 2 dictionary */
+/* ── dance floor + crew ── */
 (function(){
-  var senses=['from the Arabic. tranquil. serene. at ease.',
-    'living in comfort. untroubled. calm.',
-    'see also: the arabic root for a soft, easy life.',
-    'citation needed.'];
-  var i=0,hw=document.querySelector('.hw'),g=$('#gloss');
-  hw.style.cursor='pointer';hw.setAttribute('role','button');hw.setAttribute('tabindex','0');
-  function next(){i=Math.min(i+1,senses.length-1);g.style.opacity=0;
-    setTimeout(function(){g.textContent=senses[i];g.style.opacity=1;},120);}
-  g.style.transition='opacity .12s';
-  hw.addEventListener('click',next);
-  hw.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();next();}});
+  var f=document.getElementById('floor');
+  for(var i=0;i<24;i++){var t=document.createElement('div');t.className='tile';
+    t.style.animationDelay=((i%6)*70+((i/6)|0)*40)+'ms';f.appendChild(t);}
+  var c=document.getElementById('crew');
+  for(var j=0;j<5;j++){var g=document.createElement('div');g.className='guy';
+    g.style.animationDelay=(j*90)+'ms';
+    var h=document.createElement('div');h.className='head';h.style.background=COL[j%COL.length];
+    var d=document.createElement('div');d.className='body';d.style.background=COL[(j+2)%COL.length];
+    g.appendChild(h);g.appendChild(d);c.appendChild(g);}
 })();
 
-/* § 3 eskista */
+/* ── gate ── */
+document.getElementById('openBtn').addEventListener('click',function(){
+  document.getElementById('gate').classList.add('gone');
+  burst(170);setTimeout(function(){burst(90);},420);
+  tryPlay();
+  document.body.classList.add('dancing');
+  setTimeout(function(){document.body.classList.remove('dancing');},5200);
+});
+
+/* ── dance ── */
 (function(){
-  var C=['#5C2A79','#C79A3C','#9159B0','#5C2A79','#1E6F6B','#9159B0','#A3271F'];
-  var sh=$('#shoulders');
-  for(var i=0;i<7;i++){var p=document.createElement('div');p.className='pair';
-    for(var j=0;j<2;j++){var s=document.createElement('span');s.className='sh';
-      s.style.background=C[i];s.style.animationDelay=(i*80)+'ms';p.appendChild(s);}
-    sh.appendChild(p);}
-  var DECK=['started an empty dance floor. twice.',
-    'argues about the aux. wins the argument about the aux.',
-    'has never once needed a warm-up song.',
-    'makes her cousins do it too. they don’t want to. they do it.',
-    'can hear a 6/8 through a wall.',
-    'the auntie doesn’t push her anymore. she just gestures.',
-    'has never been the first person to sit down.',
-    'counts her year in dance floors, not months.'];
-  var btn=$('#danceBtn'),cnt=$('#cnt'),notes=$('#notes'),n=0,off=null,hold=null,tier=0;
-  var EXTRA={3:'three. that’s a full round. you’re allowed to stop.',
-    7:'seven. i built a counter because i knew you’d do this.',
-    13:'thirteen. fine. take the extra month.'};
-  function start(){document.body.classList.add('dance');clearTimeout(off);
-    hold=setTimeout(function(){tier=1;document.body.classList.add('t2');
-      hold=setTimeout(function(){tier=2;document.body.classList.add('t3');},1400);},1400);}
-  function stop(){clearTimeout(hold);
-    off=setTimeout(function(){document.body.classList.remove('dance','t2','t3');tier=0;},260);}
-  function press(){
-    n++;cnt.textContent='presses: '+n+(EXTRA[n]?'  ·  '+EXTRA[n]:'');
+  var DECK=['first one up. every single time.',
+    'has never needed a warm-up song. not one.',
+    'starts in the shoulders. eskista, no announcement, no build-up.',
+    'never waits for the song to get good. decides it’s good, and then it is.',
+    'got your cousins doing eskista. they said no. they did it anyway.',
+    'the aunties stopped asking. now they just make space.',
+    'makes everybody else brave enough to try. that’s the actual talent. ጎበዝ።'];
+  var SAY={1:'one. there it is. floor’s open.',
+    2:'two. see, this is exactly what i’m talking about.',
+    3:'three. the whole page is with you now.',
+    4:'four. shoulders first. every time. called it.',
+    5:'five. everything on this screen is moving because of you.',
+    6:'six. i’m not stopping it. it’s your birthday.',
+    7:'seven. i built the counter this high on purpose. i had a feeling.',
+    8:'eight. eight for eighteen. that felt right.',
+    9:'nine. genuinely the best part of my day, this.',
+    10:'ten. you’re not going to stop, and honestly, good.',
+    11:'eleven. i added more numbers. for you. obviously.',
+    12:'twelve. happy birthday, naima. take the whole night.'};
+  var btn=document.getElementById('danceBtn'),cnt=document.getElementById('cnt'),
+      notes=document.getElementById('notes'),n=0,off;
+  btn.addEventListener('click',function(){
+    n++;document.body.classList.add('dancing');if(!YT_PLAYER||YT_PLAYER.getPlayerState&&YT_PLAYER.getPlayerState()!==1)tryPlay();
+    cnt.textContent=SAY[n]||'still going. it’s your night, take it.';
+    burst(34);
     if(n<=DECK.length){var d=document.createElement('span');d.className='note';
-      d.style.setProperty('--r',((n*37)%7-3)+'deg');d.textContent=DECK[n-1];notes.appendChild(d);}
-    else if(n===DECK.length+1){notes.innerHTML='';
-      var e=document.createElement('span');e.className='note';
-      e.textContent='the floor is covered. you’ve been paid.';notes.appendChild(e);}
-  }
-  btn.addEventListener('pointerdown',function(){start();press();});
-  ['pointerup','pointerleave','pointercancel'].forEach(function(ev){btn.addEventListener(ev,stop);});
-  btn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();start();press();}});
-  btn.addEventListener('keyup',stop);
-})();
-
-/* § 4 loom */
-(function(){
-  var COLS=[['#5C2A79','kosso purple'],['#9159B0','tibeb violet'],['#C79A3C','zari gold'],
-            ['#1E6F6B','shiro meda teal'],['#A3271F','madder'],['#F7F2E8','ivory']];
-  var SHAPES=['diamond','x','chev'];
-  var CAPS={diamond:'the diamond ፡ people, holding onto each other.',
-    x:'the cross ፡ past and present, holding hands.',
-    chev:'the zigzag ፡ mountains. nobody said the direct route.'};
-  var slots=$('#slots'),spools=$('#spools'),count=$('#loomCount'),cap=$('#loomCap'),
-      state=new Array(12).fill(null),sel=0,si=0;
-  function motif(color,shape){
-    var r=[];
-    if(shape==='diamond')r=[[5,1,2,1],[4,2,4,1],[3,3,6,1],[4,4,4,1],[5,5,2,1]];
-    else if(shape==='x')r=[[2,1,2,1],[7,1,2,1],[3,2,2,1],[6,2,2,1],[4,3,3,1],[3,4,2,1],[6,4,2,1],[2,5,2,1],[7,5,2,1]];
-    else r=[[2,3,2,1],[3,2,2,1],[4,1,3,1],[6,2,2,1],[7,3,2,1],[4,4,3,1]];
-    var s='<svg viewBox="0 0 11 7">';
-    r.forEach(function(a){s+='<rect x="'+a[0]+'" y="'+a[1]+'" width="'+a[2]+'" height="'+a[3]+'" fill="'+color+'"/>';});
-    return s+'</svg>';
-  }
-  COLS.forEach(function(c,i){
-    var b=document.createElement('button');b.className='spool';b.type='button';
-    b.style.background=c[0];b.setAttribute('aria-label',c[1]);
-    b.setAttribute('aria-pressed',i===0?'true':'false');
-    b.addEventListener('click',function(){sel=i;
-      [].forEach.call(spools.children,function(x,j){x.setAttribute('aria-pressed',j===i?'true':'false');});});
-    spools.appendChild(b);
-  });
-  function place(i,ci,sh){
-    state[i]={c:COLS[ci][0],s:sh};
-    var el=slots.children[i];el.classList.add('on');el.innerHTML=motif(COLS[ci][0],sh);
-    var done=state.filter(Boolean).length;
-    count.textContent=done+' / 12';
-    cap.textContent=CAPS[sh];
-    if(done===12)finish();
-  }
-  for(var i=0;i<12;i++){
-    (function(i){
-      var b=document.createElement('button');b.className='slot';b.type='button';
-      b.setAttribute('aria-label','weave slot '+(i+1));
-      b.addEventListener('click',function(){if(state[i])return;place(i,sel,SHAPES[si++%3]);});
-      slots.appendChild(b);
-    })(i);
-  }
-  [0,4,7,11].forEach(function(i,k){place(i,[0,2,3,1][k],SHAPES[k%3]);});
-  si=0;cap.textContent='pick a colour. put it anywhere. you cannot make this ugly — the loom has rules, same as a real one.';
-  $('#autoWeave').addEventListener('click',function(){
-    var free=[];state.forEach(function(v,i){if(!v)free.push(i);});
-    free.forEach(function(i,k){setTimeout(function(){place(i,(k+1)%6,SHAPES[k%3]);},k*70);});
-  });
-  function finish(){
-    setTimeout(function(){
-      cap.innerHTML='<span class="gz" style="font-size:22px;color:var(--kosso)">ጎበዝ።</span><br>'+
-        'that is now the border of this entire page.<br><span class="gz">ጥለት</span> by naima. i just do the plain part.';
-      var b=document.querySelectorAll('.band rect');
-      [].forEach.call(b,function(r){r.style.transition='opacity .5s';});
-    },420);
-  }
-})();
-
-/* § 5 photos */
-(function(){
-  /* ——— photos: drop files in naima/photos/ and add a line each ———
-     {src:'photos/1.jpg', cap:'exhibit a. you had been on that floor for forty minutes.'}
-     images and short .mp4 clips both work. square-ish crops look best.        */
-  var PHOTOS=[];
-  var w=$('#pairs');
-  var n=Math.max(PHOTOS.length,2);
-  for(var i=0;i<n;i++){
-    var fig=document.createElement('figure');fig.className='fig';
-    var d=document.createElement('div');d.className='ph';
-    var p=PHOTOS[i];
-    if(p){
-      var vid=/\.(mp4|webm|mov)$/i.test(p.src);
-      var m=document.createElement(vid?'video':'img');
-      m.src=p.src;
-      if(vid){m.muted=true;m.loop=true;m.autoplay=true;m.playsInline=true;
-        m.setAttribute('muted','');m.setAttribute('playsinline','');
-        m.setAttribute('aria-label',p.cap||'');
-        m.addEventListener('loadeddata',function(){this.play().catch(function(){});});}
-      else{m.alt=p.cap||'';}
-      d.appendChild(m);
-    } else {
-      var s=document.createElement('span');s.className='mk';s.textContent='፨';d.appendChild(s);
-    }
-    fig.appendChild(d);
-    if(p&&p.cap){var c=document.createElement('figcaption');c.className='phcap';
-      c.textContent=p.cap;fig.appendChild(c);}
-    w.appendChild(fig);
-  }
-})();
-
-/* § 6 wish echo */
-(function(){
-  var inp=$('#wish'),echo=$('#echo');
-  inp.addEventListener('input',function(){
-    echo.textContent=inp.value;
-    echo.style.borderBottomColor=inp.value?'var(--gold)':'transparent';
+      d.textContent=DECK[n-1];notes.appendChild(d);}
+    clearTimeout(off);off=setTimeout(function(){document.body.classList.remove('dancing');},4200);
   });
 })();
 
-/* § 7 clocks */
+/* ── music: real ethiopian track via the youtube player api ── */
+var YT_PLAYER=null,YT_READY=false,WANT_PLAY=false;
+var pill=document.getElementById('mpill'),mhint=document.getElementById('mhint');
+function paintPill(on){pill.classList.add('show');pill.classList.toggle('on',on);
+  pill.innerHTML=(on?'♪ <span>music on</span>':'▶ <span>play music</span>');}
+window.onYouTubeIframeAPIReady=function(){
+  YT_PLAYER=new YT.Player('player',{videoId:VIDEO_ID,
+    playerVars:{playsinline:1,rel:0,modestbranding:1},
+    events:{
+      onReady:function(){YT_READY=true;if(WANT_PLAY)tryPlay();},
+      onStateChange:function(e){
+        var on=(e.data===YT.PlayerState.PLAYING);
+        paintPill(on);
+        if(on){mhint.classList.remove('show');document.body.classList.add('dancing');}
+      }
+    }});
+};
+function tryPlay(){
+  if(!YT_READY||!YT_PLAYER){WANT_PLAY=true;return;}
+  try{YT_PLAYER.unMute();YT_PLAYER.playVideo();}catch(err){}
+  setTimeout(function(){
+    try{ if(YT_PLAYER.getPlayerState()!==YT.PlayerState.PLAYING){mhint.classList.add('show');paintPill(false);} }catch(e2){}
+  },1600);
+}
+pill.addEventListener('click',function(){
+  if(!YT_PLAYER){return;}
+  try{
+    if(YT_PLAYER.getPlayerState()===YT.PlayerState.PLAYING){YT_PLAYER.pauseVideo();paintPill(false);}
+    else{tryPlay();}
+  }catch(e){}
+});
+(function(){var t=document.createElement('script');t.src='https://www.youtube.com/iframe_api';
+  document.head.appendChild(t);})();
+
+document.getElementById('moreBtn').addEventListener('click',function(){burst(200);});
+
+/* ── photos: 3–5 is the sweet spot. images or short mp4 clips. ──
+   add files to naima/photos/ then list them here. section hides itself if empty. */
+var PHOTOS=[
+  {src:'photos/1.jpg', cap:'graduation. one chapter closed, the loud one starting.'},
+  {src:'photos/2.jpg', cap:'the gown lasted about four minutes before it became a photoshoot.'},
+  {src:'photos/3.jpg', cap:'even the coat is purple. nobody is surprised. you have been extremely consistent about this.'},
+  {src:'photos/4.jpg', cap:'MHH. this is just the dance rule in a uniform.'},
+];
 (function(){
-  var c1=$('#cityClock'),c2=$('#addisClock');
-  function tick(){
-    var now=new Date();
-    var loc=new Intl.DateTimeFormat('en-CA',{timeZone:TZ,hour:'numeric',minute:'2-digit',hour12:true}).format(now);
-    c1.innerHTML=CITY+' <b>'+loc.toLowerCase()+'</b>';
-    var ad=new Intl.DateTimeFormat('en-GB',{timeZone:'Africa/Addis_Ababa',hour:'2-digit',minute:'2-digit',hour12:false}).format(now);
-    var h=parseInt(ad.slice(0,2),10),m=ad.slice(3);
-    var eh=(h+6)%12; if(eh===0)eh=12;
-    var part=(h>=6&&h<18)?((h<12)?'morning':'afternoon'):'night';
-    c2.innerHTML='ADDIS <b>'+eh+':'+m+' '+part+'</b>';
-  }
-  tick();setInterval(tick,1000);
+  if(!PHOTOS.length)return;
+  var sec=document.getElementById('shotsSec'),wrap=document.getElementById('shots');
+  sec.style.display='';
+  PHOTOS.forEach(function(p){
+    var d=document.createElement('div');d.className='shot';
+    var f=document.createElement('div');f.className='fr';
+    var vid=/\.(mp4|webm|mov)$/i.test(p.src);
+    var m=document.createElement(vid?'video':'img');m.src=p.src;
+    if(vid){m.muted=true;m.loop=true;m.autoplay=true;m.playsInline=true;
+      m.setAttribute('muted','');m.setAttribute('playsinline','');
+      m.addEventListener('loadeddata',function(){this.play().catch(function(){});});}
+    else{m.alt=p.cap||'';}
+    f.appendChild(m);d.appendChild(f);
+    if(p.cap){var c=document.createElement('p');c.textContent=p.cap;d.appendChild(c);}
+    wrap.appendChild(d);
+  });
 })();
 
-/* fringe + scroll ribbon */
+/* ── age (auto-correct on the day) ── */
 (function(){
-  var f=$('#fringe');
-  for(var i=0;i<48;i++){var s=document.createElement('i');
-    s.style.height=(6+((i*7)%9))+'px';f.appendChild(s);}
-  var w=$('#weraj');
-  function prog(){var h=document.documentElement.scrollHeight-window.innerHeight;
-    w.style.setProperty('--prog',(h>0?(window.scrollY/h)*100:0)+'%');}
-  addEventListener('scroll',prog,{passive:true});addEventListener('resize',prog);prog();
+  var B={y:2008},now=new Date();
+  document.getElementById('ageNum').textContent=now.getFullYear()-B.y;
 })();
 </script>
 </body>
