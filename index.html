@@ -20,8 +20,9 @@
   --fidel:'Noto Sans Ethiopic','Kefa','Nyala',sans-serif;
 }
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{-webkit-text-size-adjust:100%}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);
+body{margin:0;padding-top:env(safe-area-inset-top);background:var(--bg);color:var(--ink);font-family:var(--sans);
   overflow-x:hidden;line-height:1.5;
   background-image:radial-gradient(circle at 15% 10%,rgba(168,85,247,.35),transparent 45%),
     radial-gradient(circle at 85% 25%,rgba(244,114,182,.22),transparent 45%),
@@ -68,8 +69,8 @@ canvas#confetti{position:fixed;inset:0;pointer-events:none;z-index:60}
 .btn:focus-visible{outline:3px solid var(--gold);outline-offset:4px}
 
 /* ── hero ── */
-.hb{font-family:var(--disp);font-weight:800;line-height:.9;letter-spacing:-.035em;
-  font-size:clamp(58px,19vw,132px);margin:0;text-transform:uppercase}
+.hb{font-family:var(--disp);font-weight:800;line-height:.9;letter-spacing:-.04em;
+  font-size:clamp(52px,17.5vw,126px);margin:0;text-transform:uppercase;word-break:normal}
 .hb span{display:block}
 .hb .l1{color:var(--purple-lt)}
 .hb .l2{color:var(--gold)}
@@ -131,8 +132,8 @@ canvas#confetti{position:fixed;inset:0;pointer-events:none;z-index:60}
 
 .mpill{position:fixed;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:70;
   background:rgba(43,17,80,.9);border:1.5px solid var(--purple);color:var(--ink);cursor:pointer;
-  font-family:var(--sans);font-size:12px;padding:10px 15px;border-radius:999px;
-  display:none;align-items:center;gap:7px;min-height:40px;backdrop-filter:blur(6px)}
+  font-family:var(--sans);font-size:12px;padding:11px 16px;border-radius:999px;
+  display:none;align-items:center;gap:7px;min-height:44px;backdrop-filter:blur(6px)}
 .mpill.show{display:flex}
 .mpill.on{background:var(--purple);color:#20073A;font-weight:500}
 .mhint{font-size:12.5px;color:var(--gold);margin:10px 0 0;text-align:center;display:none}
@@ -140,7 +141,8 @@ canvas#confetti{position:fixed;inset:0;pointer-events:none;z-index:60}
 #player{width:100%;aspect-ratio:16/9;border:none;border-radius:12px;display:block}
 
 .shots{display:flex;gap:12px;overflow-x:auto;padding:6px 2px 14px;scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch}
+  -webkit-overflow-scrolling:touch;scroll-padding-left:2px;scrollbar-width:none}
+.shots::-webkit-scrollbar{display:none}
 .shot{flex:0 0 auto;width:150px;scroll-snap-align:center}
 .shot .fr{width:150px;height:150px;border-radius:16px;overflow:hidden;background:rgba(168,85,247,.2);
   border:2px solid var(--purple);display:grid;place-items:center}
@@ -318,6 +320,7 @@ function size(){cv.width=innerWidth*devicePixelRatio;cv.height=innerHeight*devic
   cx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);}
 size();addEventListener('resize',size);
 function burst(n){
+  if(innerWidth<520)n=Math.round(n*0.72);
   for(var i=0;i<n;i++)bits.push({x:Math.random()*innerWidth,y:-20-Math.random()*200,
     w:5+Math.random()*7,h:8+Math.random()*9,c:COL[(Math.random()*COL.length)|0],
     vx:(Math.random()-.5)*2.4,vy:2+Math.random()*3.4,r:Math.random()*6.28,vr:(Math.random()-.5)*.24});
@@ -336,8 +339,10 @@ function loop(){
 
 /* ── balloons ── */
 (function(){var w=document.getElementById('balloons');
-  for(var i=0;i<11;i++){var b=document.createElement('div');b.className='balloon';
-    b.style.left=(4+i*9)+'%';b.style.background=COL[i%COL.length];
+  var BAL=['#A855F7','#F472B6','#D8B4FE','#2DD4BF','#C084FC','#F9A8D4'];
+  var n=innerWidth<520?8:11;
+  for(var i=0;i<n;i++){var b=document.createElement('div');b.className='balloon';
+    b.style.left=(4+i*(92/n))+'%';b.style.background=BAL[i%BAL.length];
     b.style.animationDuration=(11+Math.random()*9)+'s';
     b.style.animationDelay=(-Math.random()*16)+'s';
     b.style.setProperty('--sp',((Math.random()-.5)*40)+'deg');
@@ -441,7 +446,7 @@ var PHOTOS=[
   {src:'photos/1.jpg', cap:'graduation. one chapter closed, the loud one starting.'},
   {src:'photos/2.jpg', cap:'the gown lasted about four minutes before it became a photoshoot.'},
   {src:'photos/3.jpg', cap:'even the coat is purple. nobody is surprised. you have been extremely consistent about this.'},
-  {src:'photos/4.jpg', cap:'MHH. this is just the dance rule in a uniform.'},
+  {src:'photos/4.jpg', cap:'cheer squad. so the dance rule is technically a school-sanctioned activity now.'},
 ];
 (function(){
   if(!PHOTOS.length)return;
